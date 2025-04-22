@@ -57,6 +57,12 @@ The second data set has the following columns:
 
 ### Univerate Analysis
 
+ <iframe
+ src="win_per_class.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
 
 
 
