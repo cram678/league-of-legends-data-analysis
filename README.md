@@ -68,8 +68,17 @@ The above plot shows the win rate by class the graph is zoomed in to a 3% range 
 
 ### Bivariate Analysis
 
+ <iframe
+ src="win_vs_role.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
 
+The above plot demonstrates the relationship between the number of unique classes in a team composition against their win rate. Although the median and max arent very different between the three different types of team composition the minimum and q1 on the teams with 5 different classes is much higher suggesting that a more diverse team is often better.
 
+### Interesting Aggregates
+The main table that I aggregated was previously mentioned and that is the aggregate of the wins and losses per team composition which is the following table.
 
 
 
