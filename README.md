@@ -37,4 +37,6 @@ The second data set has the following columns:
 | Champion    | Champion name      |
 | Class       | Class name         |
 
-
+---
+##Data Cleaning and Exploratory Analysis
+###Data Cleaning
