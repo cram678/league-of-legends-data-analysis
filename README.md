@@ -81,7 +81,7 @@ The above plot demonstrates the relationship between the number of unique classe
 The main table that I aggregated was previously mentioned and that is the aggregate of the wins and losses per team composition which is the following table.
 
  <iframe
- src="composition_html.html"
+ src="composition_stats.html"
  width="800"
  height="600"
  frameborder="0"
