@@ -86,4 +86,28 @@ I aggregated the number of games played in the data set with 3, 4, and 5 differe
 | 4 | 8566 |
 | 5 | 9286 |
 
+### Imputation
+No missing values were imputed. However in the dataset of champions associated with their roles some champions were assigned multiple roles by the wiki so I selected one of the roles based on which I believed to be more representative of the champion for example Jhin was labeled as both a Marksman and Controller I felt the Marksman was a much better representation of Jhin so I put him as only a Marksman.
+
+## Framing a Prediction Problem
+My prediction problem answers the following question: given a teams class composition can we predict whether a team will or will not win a match? This is a binary classification problem outputing 1 for a win and 0 for a loss. I will mainly use accuracy to evaluate the model since the classes win and loss are balanced, if class imbalance is observed I may also use AUROC and F1 score. I will only be using the team class compositon since it will be known before the game.
+
+## Baseline Model
+I tried several different models all with the same parameters those being the classes used for picks 1 through 5 which was nominal data as well as the number of unique roles on a team which was quantitative data and used those features to attempt to predict the result (1 for a win 0 for a loss). I tried several different models all with very similar results of an accuracy extremely close to .5 my attempt with gradient boosting for example had an accuracy of .516 while my attempt with SVM had an accuracy of .515. Due to the accuracy being so close to .5 I dont believe any of the models I tried are currently good models since they are barely better than random chance. This might suggest that team composition has little impact on game outcome.
+
+## Final Model
+My final model used a total of 26 parameters where my baseline model only used 6. The first change I made to my parameters was instead of using classes for each pick I used the actual champion names, I decided to do this since unlike in my exploratory analysis where I may have had to analyze my data as an entire team compisition the models used in this section don't have a problem with that and I figured the granularity might help the model. I kept the number of unique roles column the same, but then added 7 columns to represent how many of each class a team had. I thought this could help my model since certain roles might be stronger than others or having more than a certain threshold of a role could be bad. For example generally having three marksman on a team could be bad since a team likely wouldnt be able to survive long due to marksmans low health pools. Finally I decided to add all of those columns except for the opponent the team was facing I think this was likely the most impactful change since a good team composition is often dependant on the team composition it is playing against.
+
+I tested several different types of models but in the end decided to go with an SVM model since on my first pass through of models it achieved an accuracy of .55 much better than my baseline model. I then decided to test various hyper parameters for my SVM model I used grid search to test the following parameters:
+```py
+param_grid = {
+    "classifier__C": [0.1, 1, 3, 5, 10],
+    "classifier__gamma": [0.01, 0.1, 1, 'scale', 'auto'],
+    "classifier__kernel": ["rbf"]
+}
+```
+I found that the best parameters were actual the default parameters with an accuracy of .55 which significantly improved on the .51 accuracy from the baseline model.
+
+
+
 
