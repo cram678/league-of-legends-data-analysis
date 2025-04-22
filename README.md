@@ -64,6 +64,10 @@ The second data set has the following columns:
  frameborder="0"
  ></iframe>
 
+The above plot shows the win rate by class the graph is zoomed in to a 3% range around 50% and although there appears to be a large difference between classes it is mostly due to the zoom. The difference between classes is actually relativley small suggesting a relative parity in winrates between classes.
+
+### Bivariate Analysis
+
 
 
 
