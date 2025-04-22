@@ -75,16 +75,15 @@ The above plot shows the win rate by class the graph is zoomed in to a 3% range 
  frameborder="0"
  ></iframe>
 
-The above plot demonstrates the relationship between the number of unique classes in a team composition against their win rate. Although the median and max arent very different between the three different types of team composition the minimum and q1 on the teams with 5 different classes is much higher suggesting that a more diverse team is often better.
+The above plot demonstrates the relationship between the number of unique classes in a team composition against their win rate. Although the medians arent very different between the three different types of team composition the teams with 5 different classes have a much more concentrated distribution suggesting that more balanced teams are more consistent.
 
 ### Interesting Aggregates
-The main table that I aggregated was previously mentioned and that is the aggregate of the wins and losses per team composition which is the following table.
+I aggregated the number of games played in the data set with 3, 4, and 5 different champion classes on a team in order to look at the data in the bivariate analysis. As shown below there arent nearly as many games with 3 different champion classes suggesting that the above might not be as accurate for the teams with 3 different champion classes.
 
- <iframe
- src="composition_stats.html"
- width="800"
- height="600"
- frameborder="0"
- ></iframe>
+| num_unique_roles	| count |
+|:----------------------------------------|---------:|
+| 3 | 754|
+| 4 | 8566 |
+| 5 | 9286 |
 
 
